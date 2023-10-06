@@ -1,6 +1,8 @@
+import java.util.Scanner;
+
 public class Homework2 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner= new Scanner(System.in);
         /** Task 1  */
         /*int n = scanner.nextInt();
         if (n % 2 == 0) {
