@@ -17,10 +17,33 @@ public class Homework_4 {
         for (int i = size - 1; i >= 0; i--) {
             System.out.print(array[i] + " ");
         }
-        Arrays.sort(array);
-        System.out.println("\nМинимальный элемент = " + array[0]);
-        System.out.println("Максимальный элемент = " + array[size-1]);
-        System.out.println(Arrays.toString(array));
-
+        int[] sortArray = new int[size];
+        for (int i = 0; i < size; i++) {
+            sortArray[i] = array[i];
+        }
+        Arrays.sort(sortArray);
+        System.out.println("\nМинимальный элемент = " + sortArray[0]);
+        System.out.println("Максимальный элемент = " + sortArray[size - 1]);
+        for (int i = 0; i < size; i++) {
+            if (array[i] == sortArray[0]) {
+                System.out.println("Индекс минимального элемента = " + i);
+            }
+        }
+        for (int i = 0; i < size; i++) {
+            if (array[i] == sortArray[size - 1]) {
+                System.out.println("Индекс максимального элемента = " + i);
+            }
+        }
+        int nullItems = 0;
+        for (int i = 0; i < size; i++) {
+            if (array[i] == 0) {
+                nullItems++;
+            }
+        }
+        if (nullItems != 0) {
+            System.out.println("Количество нулевых элементов = " + nullItems);
+        } else {
+            System.out.println("Нулевых элементов нет!");
+        }
     }
 }
