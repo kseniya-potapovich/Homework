@@ -77,21 +77,26 @@ public class Homework_4 {
          * представляет целое число (Например массив {1,2,3} -> 123, {9,9,9} -> 999). Задача
          * добавить единицу к этому “числу” и на выходе получить исправленный массив. Массив не
          * содержит нуля в начале, кроме самого числа 0*/
-        int[] arr = new int[4];
+        System.out.println("Task with *:");
+        int[] arr = new int[size];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = scanner.nextInt();
+            arr[i] =(int) (Math.random()*10);
         }
         System.out.println("Исходный массив: " + Arrays.toString(arr));
-        for (int i =0;i<arr.length;i++){
-            if(arr[arr.length-1] != 9){
-                arr[arr.length-1]++;
-                break;
-            }else if(arr[arr.length-1]==9){
-                arr[arr.length-1]=0;
-                arr[arr.length-i-1]++;
-                break;
-            }
+        String str = "";
+
+        for (int i = 0; i < arr.length; i++) {
+            str += arr[i];
         }
-        System.out.println("Преобразованный массив: " + Arrays.toString(arr));
+        int d = Integer.parseInt(str) + 1;
+        if (arr[0] == 0){
+            size++;
+        }
+        int[] arr1 = new int[size];
+        for (int i = arr1.length - 1; i >= 0; i--) {
+            arr1[i] = d % 10;
+            d = d / 10;
+        }
+        System.out.println("Преобразованный массив: " + Arrays.toString(arr1));
     }
 }
