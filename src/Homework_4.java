@@ -9,6 +9,10 @@ public class Homework_4 {
         for (int i = 0; i < size; i++) {
             array[i] = (int) (Math.random() * 100);
         }
+        /*int[] arraySec = new int[size];
+        for (int i = 0; i < size; i++) {
+            arraySec[i] = scanner.nextInt();
+        }*/
         System.out.println("Прямой вывод массива");
         for (int item : array) {
             System.out.print(item + " ");
@@ -45,5 +49,49 @@ public class Homework_4 {
         } else {
             System.out.println("Нулевых элементов нет!");
         }
+        int k;
+        for (int i = 0; i < size / 2; i++) {
+            k = array[i];
+            array[i] = array[size - 1 - i];
+            array[size - 1 - i] = k;
+        }
+        System.out.println("Задача 5:");
+        for (int i = 0; i < size; i++) {
+            System.out.print(array[i] + " ");
+        }
+        int r = 0;
+        for (int i = 1; i < size; i++) {
+            if (array[i] <= array[i - 1]) {
+                r = 1;
+                break;
+            }
+        }
+        if (r == 0) {
+            System.out.println("\nМассив является возрастающей последовательностью");
+        } else {
+            System.out.println("\nМассив не является возрастающей последовательностью");
+        }
+
+        /** Task with *
+         * Имеется массив из неотрицательных чисел(любой). Представьте что массив
+         * представляет целое число (Например массив {1,2,3} -> 123, {9,9,9} -> 999). Задача
+         * добавить единицу к этому “числу” и на выходе получить исправленный массив. Массив не
+         * содержит нуля в начале, кроме самого числа 0*/
+        int[] arr = new int[4];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        System.out.println("Исходный массив: " + Arrays.toString(arr));
+        for (int i =0;i<arr.length;i++){
+            if(arr[arr.length-1] != 9){
+                arr[arr.length-1]++;
+                break;
+            }else if(arr[arr.length-1]==9){
+                arr[arr.length-1]=0;
+                arr[arr.length-i-1]++;
+                break;
+            }
+        }
+        System.out.println("Преобразованный массив: " + Arrays.toString(arr));
     }
 }
