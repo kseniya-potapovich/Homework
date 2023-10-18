@@ -80,7 +80,7 @@ public class Homework_4 {
         System.out.println("Task with *:");
         int[] arr = new int[size];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] =(int) (Math.random()*10);
+            arr[i] = scanner.nextInt();
         }
         System.out.println("Исходный массив: " + Arrays.toString(arr));
         String str = "";
